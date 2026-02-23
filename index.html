@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revisor de Micro Provas</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Revisor de Planilha de Micro Prova</h1>
+      <p>
+        Envie uma planilha (<strong>.xlsx</strong> ou <strong>.xls</strong>), remova tags
+        HTML dos enunciados/alternativas e exporte a versão revisada.
+      </p>
+
+      <section class="card">
+        <label for="fileInput" class="label">Arquivo de entrada</label>
+        <input id="fileInput" type="file" accept=".xlsx,.xls" />
+        <div class="actions">
+          <button id="processButton" disabled>Processar planilha</button>
+          <button id="downloadButton" disabled>Exportar planilha revisada</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Resumo</h2>
+        <ul id="summary">
+          <li>Arquivo: nenhum</li>
+          <li>Abas processadas: 0</li>
+          <li>Células com limpeza de HTML: 0</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Prévia de células alteradas</h2>
+        <div id="preview" class="preview muted">Nenhuma planilha processada ainda.</div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
